@@ -6,7 +6,7 @@ pipeline {
 		    stage('Test') {
 			    agent any
         		    steps {
-        		        git url: 'https://github.com/mdasilva/jenkins-pipline-test.git/'
+				checkout scm
 				sh "git --version"
 				sh "echo 'hello'"
 				echo scm.getUserRemoteConfigs()[0].getUrl()
